@@ -1,0 +1,3 @@
+[submodule "ClientWorld/Model"]
+	path = ClientWorld/Model
+	url = git@github.com:pocketzworld/highrise-interview-model.git

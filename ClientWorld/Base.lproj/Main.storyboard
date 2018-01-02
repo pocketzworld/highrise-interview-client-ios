@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ClientWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGQ-oY-IzY">
+                                <rect key="frame" x="12" y="32" width="351" height="44"/>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Lqd-JL-rpA"/>
+                                </constraints>
+                                <state key="normal" title="Connect">
+                                    <color key="titleColor" red="0.91372549020000005" green="0.35294117650000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectSocketTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Gp-6B-r5k"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zSl-6Q-yvU">
+                                <rect key="frame" x="12" y="126" width="351" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Room ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b44-1R-8rU">
+                                        <rect key="frame" x="0.0" y="0.0" width="267" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCZ-Nt-IrX">
+                                        <rect key="frame" x="279" y="0.0" width="72" height="30"/>
+                                        <state key="normal" title="Join Room">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.35294117650000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="joinRoomTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1hK-jN-5vS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QCZ-Nt-IrX" secondAttribute="trailing" id="Jty-IU-Ltv"/>
+                                    <constraint firstAttribute="bottom" secondItem="b44-1R-8rU" secondAttribute="bottom" id="LGx-th-f9F"/>
+                                    <constraint firstItem="b44-1R-8rU" firstAttribute="top" secondItem="zSl-6Q-yvU" secondAttribute="top" id="SYV-EI-0CC"/>
+                                    <constraint firstItem="QCZ-Nt-IrX" firstAttribute="top" secondItem="zSl-6Q-yvU" secondAttribute="top" id="WMI-Pl-nuQ"/>
+                                    <constraint firstItem="QCZ-Nt-IrX" firstAttribute="leading" secondItem="b44-1R-8rU" secondAttribute="trailing" constant="12" id="ZGq-9R-jm0"/>
+                                    <constraint firstItem="b44-1R-8rU" firstAttribute="leading" secondItem="zSl-6Q-yvU" secondAttribute="leading" id="fAG-k4-Fc1"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Y5-XI-JxD">
+                                <rect key="frame" x="12" y="168" width="351" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rxP-ha-2V8">
+                                        <rect key="frame" x="0.0" y="0.0" width="238" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqJ-oP-ODV">
+                                        <rect key="frame" x="250" y="0.0" width="101" height="30"/>
+                                        <state key="normal" title="Send Message">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.35294117650000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendMessageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EBv-Pb-HJi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="rxP-ha-2V8" secondAttribute="bottom" id="485-O4-G0p"/>
+                                    <constraint firstItem="rxP-ha-2V8" firstAttribute="leading" secondItem="2Y5-XI-JxD" secondAttribute="leading" id="9fZ-Du-UhM"/>
+                                    <constraint firstItem="QqJ-oP-ODV" firstAttribute="leading" secondItem="rxP-ha-2V8" secondAttribute="trailing" constant="12" id="YqV-2z-QYe"/>
+                                    <constraint firstItem="QqJ-oP-ODV" firstAttribute="top" secondItem="2Y5-XI-JxD" secondAttribute="top" id="hYx-hC-uDA"/>
+                                    <constraint firstAttribute="trailing" secondItem="QqJ-oP-ODV" secondAttribute="trailing" id="kAF-Hl-qxT"/>
+                                    <constraint firstItem="rxP-ha-2V8" firstAttribute="top" secondItem="2Y5-XI-JxD" secondAttribute="top" id="sUk-nh-pIw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dGQ-oY-IzY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="313-h1-Lmx"/>
+                            <constraint firstItem="dGQ-oY-IzY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="55Q-ov-QtW"/>
+                            <constraint firstItem="zSl-6Q-yvU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="P7e-Mp-wDO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zSl-6Q-yvU" secondAttribute="trailing" constant="12" id="TVJ-W3-v4g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Y5-XI-JxD" secondAttribute="trailing" constant="12" id="Ugn-9k-O9t"/>
+                            <constraint firstItem="2Y5-XI-JxD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="Zhh-3e-wF0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGQ-oY-IzY" secondAttribute="trailing" constant="12" id="kjM-dT-afG"/>
+                            <constraint firstItem="zSl-6Q-yvU" firstAttribute="top" secondItem="dGQ-oY-IzY" secondAttribute="bottom" constant="50" id="sGr-gQ-Wth"/>
+                            <constraint firstItem="2Y5-XI-JxD" firstAttribute="top" secondItem="zSl-6Q-yvU" secondAttribute="bottom" constant="12" id="sN4-kM-QGt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="connectButton" destination="dGQ-oY-IzY" id="Qpj-RS-cRF"/>
+                        <outlet property="messageField" destination="rxP-ha-2V8" id="6Mq-d9-H5O"/>
+                        <outlet property="roomTextField" destination="b44-1R-8rU" id="Fbf-ql-CAB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
