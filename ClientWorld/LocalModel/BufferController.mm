@@ -79,12 +79,12 @@ using namespace rs::high::life;
             
         case rs::high::life::fbs::AnyServerContent_AvatarLeftEvent: {
             auto avatarLeft = serverMessage->content_as_AvatarLeftEvent();
-            responseMessage = avatarLeft->userId()->str() + "left. Auf Wiedersehen!";
+            responseMessage = avatarLeft->userId()->str() + " left. Auf Wiedersehen!";
             break;
         }
         case rs::high::life::fbs::AnyServerContent_AvatarJoinedEvent: {
             auto avatarJoined = serverMessage->content_as_AvatarJoinedEvent();
-            responseMessage = avatarJoined->avatar()->userId()->str() + "joined. Wilkommen!";
+            responseMessage = avatarJoined->avatar()->userId()->str() + " joined. Wilkommen!";
             break;
         }
 
