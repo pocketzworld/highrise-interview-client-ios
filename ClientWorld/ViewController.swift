@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var connectButton: UIButton!
 
-    let socketURL = "ws://<url>:8080/"
+    let socketURL = "ws://35.186.219.54:80"
     var socket: WebSocket?
     
     var currentUserId = "007"
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
             return
         }
 
-        if let data = BufferController.default().sendVWMessageRequest(fromUser: currentUserId, name: currentUserName, message: "Vodka Martini, Shaken not  stirred") {
+        if let data = BufferController.default().sendVWMessageRequest(fromUser: currentUserId, name: currentUserName, message: "Vodka Martini, Shaken not stirred") {
             socket?.write(data: data, completion: {
                 self.showMessage("Message Sent…")
             })
@@ -95,7 +95,9 @@ extension ViewController: WebSocketDelegate {
     }
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
-        print("Websocket Connected: \(error?.localizedDescription ?? "")")
+        print("Websocket Disconnected: \(error?.localizedDescription ?? "")")
+        self.socket = nil
+        connectButton.isEnabled = true
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
