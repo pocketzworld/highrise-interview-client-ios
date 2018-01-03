@@ -11,6 +11,7 @@ import Starscream
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var userIdField: UITextField!
     @IBOutlet weak var roomTextField: UITextField!
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var connectButton: UIButton!
@@ -20,6 +21,12 @@ class ViewController: UIViewController {
     
     var currentUserId = "007"
     var currentUserName = "James Bond"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userIdField.text = currentUserId
+    }
+    
     
     fileprivate func socketConnected() -> Bool {
         return socket != nil && socket?.isConnected == true
@@ -66,7 +73,7 @@ class ViewController: UIViewController {
             return
         }
         
-        if let data = BufferController.default().joinRoomRequest(withUser: currentUserId, name: currentUserName, roomId: roomId) {
+        if let data = BufferController.default().joinRoomRequest(withUser: userIdField.text, name: currentUserName, roomId: roomId) {
             socket?.write(data: data, completion: {
                 self.showMessage("Join Message Sent!")
             })
@@ -79,7 +86,7 @@ class ViewController: UIViewController {
             return
         }
 
-        if let data = BufferController.default().sendVWMessageRequest(fromUser: currentUserId, name: currentUserName, message: "Vodka Martini, Shaken not stirred") {
+        if let data = BufferController.default().sendVWMessageRequest(fromUser: userIdField.text, name: currentUserName, message: "Vodka Martini, Shaken not stirred") {
             socket?.write(data: data, completion: {
                 self.showMessage("Message Sent…")
             })
@@ -98,6 +105,7 @@ extension ViewController: WebSocketDelegate {
         print("Websocket Disconnected: \(error?.localizedDescription ?? "")")
         self.socket = nil
         connectButton.isEnabled = true
+        self.showMessage("Disconnected")
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
